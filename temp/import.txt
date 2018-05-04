@@ -1,0 +1,26 @@
+I. INSTALL:
+- mobx and mobx-react:
+npm i mobx mobx-react --save
+- babel plugin:
+npm i babel-plugin-transform-decorators-legacy --save-dev
+
+
+
+II. CODE:
+- babelrc:
+'plugins': ['transform-decorators-legacy']
+
+- View:
+import { observable } from "mobx";
+import { observer, inject } from "mobx-react";
+
+@inject("attrStore")
+@observer
+- Store:
+import { observable, action, computed } from "mobx";
+- SecondScreen:
+import { Provider, observer } from "mobx-react";
+import AttrStore from 'ReactNativeMobX/mobx/stores/AttrStore';
+import AttrView from 'ReactNativeMobX/view/AttrView';
+
+const attrStore = new AttrStore();
